@@ -14,8 +14,6 @@ class APIDataCollector:
             return None
 
     def process_response(self, data):
-        # Your processing logic here
-        # Example: Extracting relevant fields from the API response
         records = []
         for launch in data:
             record = {
@@ -24,11 +22,10 @@ class APIDataCollector:
                 'Details': launch['details'],
                 'Date': launch['date_utc'],
                 'RocketID': launch['rocket'],
-                # Add more fields as needed
+
             }
             records.append(record)
 
-        # Create a DataFrame
         df = pd.DataFrame(records)
 
         return df
